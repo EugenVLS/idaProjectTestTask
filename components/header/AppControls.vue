@@ -1,37 +1,49 @@
 <template>
-    <div :class="$style.user">
-        <div :class="$style.text">
-            Bessie Cooper
+    <div :class="$style.controls">
+        <app-theme-toggle :class="$style.control"/>
+
+        <div :class="$style.control">
+            <svg-icon name="messages" width="24" height="24"/>
         </div>
-        <img :class="$style.avatar" src="~/assets/img/avatar.png" alt="avatar">
+
+        <div :class="$style.control">
+            <svg-icon name="bell" width="24" height="24"/>
+        </div>
     </div>
 </template>
 
 <script>
+  import AppThemeToggle from '~/components/header/AppThemeToggle'
   export default {
     name: 'AppUser',
+    components: { AppThemeToggle },
   }
 </script>
 
 <style module lang="scss">
-    .user {
+    .controls {
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 18%;
-    }
+        width: 23%;
 
-    .text {
-        color: $black;
-        font-weight: bold;
-
-        @media (max-width: 767px) {
-            display: none;
+        @media (max-width: $mobile) {
+            width: auto;
         }
     }
 
-    .avatar {
-        border-radius: 50%;
-        margin-left: 16px;
+    .control {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+
+        svg {
+            @media (max-width: $mobile) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: $mobile) {
+            padding: 0 8px;
+        }
     }
 </style>

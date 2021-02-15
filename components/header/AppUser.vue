@@ -19,19 +19,30 @@
         align-items: center;
         justify-content: flex-end;
         width: 18%;
+
+        @media (max-width: $mobile) {
+            width: auto;
+        }
     }
 
     .text {
         color: $black;
         font-weight: bold;
 
-        @media (max-width: 767px) {
+        @media (max-width: $mobile) {
             display: none;
         }
     }
 
     .avatar {
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
         margin-left: 16px;
+
+        @media (max-width: $mobile) {
+            width: 32px;
+            height: 32px;
+        }
     }
 </style>

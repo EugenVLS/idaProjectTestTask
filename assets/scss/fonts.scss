@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Codec Pro';
+    src: local('Codec Pro Heavy'), local('CodecPro-Heavy'),
+    url('~assets/fonts/CodecPro-Bold.woff2') format('woff2'),
+    url('~assets/fonts/CodecPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Codec Pro';
+    src: local('Codec Pro Light'), local('CodecPro-Light'),
+    url('~assets/fonts/CodecPro-Light.woff2') format('woff2'),
+    url('~assets/fonts/CodecPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+

@@ -1,13 +1,10 @@
 <template>
-    <app-catalog/>
+    <card-detail/>
 </template>
 
 <script>
-  import AppCatalog from '~/components/catalog/AppCatalog';
-
+  import CardDetail from '~/components/card/CardDetail';
   export default {
-      components: {
-        AppCatalog,
-      }
+    components: { CardDetail }
   }
 </script>

@@ -1,26 +1,13 @@
 <template>
     <header :class="$style.header">
         <div :class="$style['header-container']">
-            <div :class="$style.logo">
+            <nuxt-link to="/" :class="$style.logo">
                 <svg-icon name="logo" width="170" height="48"/>
-            </div>
+            </nuxt-link>
 
             <div :class="$style.label">World's first affordable airsharing</div>
 
-            <div :class="$style.controls">
-                <div :class="[$style.control,$style.theme]">
-                    <svg-icon name="moon" width="24" height="24"/>
-                    <span :class="$style['theme-text']">Night mod</span>
-                </div>
-
-                <div :class="$style.control">
-                    <svg-icon name="messages" width="24" height="24"/>
-                </div>
-
-                <div :class="$style.control">
-                    <svg-icon name="bell" width="24" height="24"/>
-                </div>
-            </div>
+            <app-controls/>
 
             <app-user/>
         </div>
@@ -28,12 +15,14 @@
 </template>
 
 <script>
-  import AppUser from './AppUser'
+  import AppUser     from '~/components/header/AppUser'
+  import AppControls from '~/components/header/AppControls'
 
   export default {
     name: 'Header',
     components: {
       AppUser,
+      AppControls,
     },
   }
 </script>
@@ -42,7 +31,7 @@
     .header {
         margin-bottom: 40px;
 
-        @media (max-width: 767px) {
+        @media (max-width: $mobile) {
             margin-bottom: 8px;
         }
     }
@@ -50,50 +39,34 @@
     .header-container {
         display: flex;
         align-items: center;
-    }
 
-    .text {
-        color: $grey;
+        @media (max-width: $mobile) {
+            padding: 12px;
+        }
     }
 
     .label {
-        composes: text;
+        color: $grey;
         width: 41%;
 
-        @media (max-width: 767px) {
+        @media (max-width: $mobile) {
             display: none;
         }
     }
 
     .logo {
         width: 18%;
-    }
 
-    .controls {
-        display: flex;
-        width: 23%;
-    }
-
-    .control {
-        display: flex;
-        align-items: center;
-        padding: 0 12px;
-    }
-
-    .theme {
-        flex-grow: 1;
-
-        @media (max-width: 767px) {
-            flex-grow: 0;
+        svg {
+            @media (max-width: $mobile) {
+                width: 113px;
+                height: 32px;
+            }
         }
-    }
 
-    .theme-text {
-        composes: text;
-        margin-left: 16px;
-
-        @media (max-width: 767px) {
-            display: none;
+        @media (max-width: $mobile) {
+            width: auto;
+            flex-grow: 1;
         }
     }
 </style>
