@@ -1,5 +1,5 @@
 <template>
-    <div :class="$style.container">
+    <div :class="$style.container + ' theme--dark'">
         <app-header/>
         <Nuxt/>
     </div>

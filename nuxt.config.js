@@ -44,6 +44,7 @@ export default {
   styleResources: {
     scss: [
       '~/assets/scss/variables.scss',
+      '~/assets/scss/mixins.scss',
     ],
   },
 

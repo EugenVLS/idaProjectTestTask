@@ -84,7 +84,7 @@
         line-height: 1;
         margin-top: 16px;
         margin-bottom: 12px;
-        color: $black;
+        @include color(black);
     }
 
     .desc {

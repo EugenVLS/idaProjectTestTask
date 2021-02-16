@@ -1,0 +1,10 @@
+@mixin color($color) {
+    color: map-get(map-get($colors, light), $color);
+
+    :global(.theme--dark) & {
+        color: map-get(map-get($colors, dark), $color);
+    }
+}
+
+
+
