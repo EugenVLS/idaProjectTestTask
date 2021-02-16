@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'AppThemeToggle',
+        name: 'ThemeToggle',
     };
 </script>
 

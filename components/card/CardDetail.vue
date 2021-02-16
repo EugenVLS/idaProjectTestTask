@@ -22,7 +22,7 @@
                     </nuxt-link>
                 </div>
 
-                <nuxt-child/>
+                <nuxt-child :description="description"/>
             </div>
 
             <div :class="$style['banner-overlay']">
@@ -51,29 +51,43 @@
             },
             name: {
                 type: String,
-                reqired: true,
+                required: true,
             },
             image: {
                 type: String,
-                reqired: true,
+                required: true,
             },
             rent: {
                 type: Number,
-                reqired: true,
+                required: true,
             },
             specifications_text: {
                 type: String,
-                reqired: true,
+                required: true,
             },
             team_text: {
                 type: String,
-                reqired: true,
+                required: true,
             },
             term_text: {
                 type: String,
-                reqired: true,
+                required: true,
             },
-        }
+        },
+        computed: {
+          description: vm => {
+            const active = vm.$route.name.split( '-' )[2];
+
+            switch (active) {
+              case 'spec':
+                return vm.specifications_text;
+              case 'team':
+                return vm.team_text;
+              default:
+                return vm.term_text;
+            }
+          },
+        },
     };
 </script>
 

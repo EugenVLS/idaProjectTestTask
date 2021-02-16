@@ -8,7 +8,8 @@
                 </option>
             </select>
 
-            <button type="button" class="button button--icon">
+            <button type="button" class="button button--icon"
+                    @click="openDialog">
                 <div class="button__text">
                     Add new
                 </div>
@@ -17,6 +18,8 @@
                     <svg-icon name="plus" width="24" height="24"/>
                 </div>
             </button>
+
+            <add-new-dialog v-model="addDialog"/>
         </div>
 
         <div :class="$style['catalog-list']">
@@ -32,12 +35,14 @@
 <script>
     import CardPreview    from '~/components/card/CardPreview';
     import { mapGetters } from 'vuex';
+    import AddNewDialog   from '~/components/dialogs/AddNewDialog'
 
     export default {
-        name: 'AppCatalog',
-        components: { CardPreview },
+        name: 'Catalog',
+        components: { AddNewDialog, CardPreview },
         data: () => ( {
             filterType: '',
+            addDialog: false,
         } ),
         computed: {
             ...mapGetters( [ 'catalogItems' ] ),
@@ -48,6 +53,11 @@
                 return filteredTypes;
             },
             items: vm => vm.catalogItems.filter( item => item.type === vm.filterType ),
+        },
+        methods: {
+          openDialog() {
+            this.addDialog = true;
+          },
         },
     };
 </script>

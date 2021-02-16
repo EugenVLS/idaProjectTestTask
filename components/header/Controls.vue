@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.controls">
-        <app-theme-toggle :class="$style.control"/>
+        <theme-toggle :class="$style.control"/>
 
         <div :class="$style.control">
             <svg-icon name="messages" width="24" height="24"/>
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-    import AppThemeToggle from '~/components/header/AppThemeToggle';
+    import ThemeToggle from '~/components/header/ThemeToggle';
 
     export default {
-        name: 'AppUser',
-        components: { AppThemeToggle },
+        name: 'User',
+        components: { ThemeToggle },
     };
 </script>
 

@@ -15,7 +15,9 @@ export const mutations = {
 };
 
 export const actions = {
-    async getItems( { commit } ) {
+    async getItems( { state, commit } ) {
+        if ( state.items.length ) return;
+
         return getVehicles()
             .then( res => {
                 return res;

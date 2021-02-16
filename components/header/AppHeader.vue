@@ -7,22 +7,22 @@
 
             <div :class="$style.label">World's first affordable airsharing</div>
 
-            <app-controls/>
+            <controls/>
 
-            <app-user/>
+            <user/>
         </div>
     </header>
 </template>
 
 <script>
-    import AppUser     from '~/components/header/AppUser';
-    import AppControls from '~/components/header/AppControls';
+    import User     from '~/components/header/User';
+    import Controls from '~/components/header/Controls';
 
     export default {
         name: 'Header',
         components: {
-            AppUser,
-            AppControls,
+            User,
+            Controls,
         },
     };
 </script>

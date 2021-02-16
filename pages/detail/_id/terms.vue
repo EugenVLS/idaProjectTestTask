@@ -1,9 +1,7 @@
 <template>
     <div>
         <p :class="$style.info">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            <br><br>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+            {{ description }}
         </p>
 
         <h2 :class="$style.title">
@@ -35,6 +33,12 @@
 <script>
   export default {
     name: 'spec',
+    props: {
+      description: {
+        type: String,
+        reqired: true,
+      },
+    }
   }
 </script>
 

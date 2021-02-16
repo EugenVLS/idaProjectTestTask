@@ -36,27 +36,27 @@
         @media(max-width: $mobile) {
             font-size: 16px;
         }
+    }
 
-        .button__text {
-            margin-right: 20px;
-        }
+    &__text {
+        margin-right: 20px;
+    }
 
-        .button__icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background-color: $blue;
-            padding: 12px;
-            border-radius: 16px;
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: $blue;
+        padding: 12px;
+        border-radius: 16px;
 
-            @media(max-width: $mobile) {
-                width: 32px;
-                height: 32px;
-                padding: 6px;
-                border-radius: 8px;
-            }
+        @media(max-width: $mobile) {
+            width: 32px;
+            height: 32px;
+            padding: 6px;
+            border-radius: 8px;
         }
     }
 }

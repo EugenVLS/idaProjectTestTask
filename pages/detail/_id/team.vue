@@ -1,7 +1,7 @@
 <template>
     <div>
         <p :class="$style.info">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+            {{ description }}
         </p>
 
         <h2 :class="$style.title">
@@ -68,6 +68,12 @@
 <script>
   export default {
     name: 'team',
+    props: {
+      description: {
+        type: String,
+        reqired: true,
+      },
+    }
   }
 </script>
 

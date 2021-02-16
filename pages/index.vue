@@ -1,14 +1,14 @@
 <template>
-    <app-catalog/>
+    <catalog/>
 </template>
 
 <script>
-    import AppCatalog     from '~/components/catalog/AppCatalog';
+    import Catalog     from '~/components/catalog/Catalog';
     import { mapActions } from 'vuex';
 
     export default {
         components: {
-            AppCatalog,
+            Catalog,
         },
         async asyncData( { store } ) {
             await store.dispatch( 'getItems' );
