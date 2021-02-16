@@ -15,16 +15,16 @@
 </template>
 
 <script>
-  import AppUser     from '~/components/header/AppUser'
-  import AppControls from '~/components/header/AppControls'
+    import AppUser     from '~/components/header/AppUser';
+    import AppControls from '~/components/header/AppControls';
 
-  export default {
-    name: 'Header',
-    components: {
-      AppUser,
-      AppControls,
-    },
-  }
+    export default {
+        name: 'Header',
+        components: {
+            AppUser,
+            AppControls,
+        },
+    };
 </script>
 
 <style module lang="scss">

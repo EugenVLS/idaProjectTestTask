@@ -1,34 +1,49 @@
 <template>
     <nuxt-link :to="link" :class="$style.card">
-        <img :class="$style.image" src="~/assets/img/card.png" alt="card preview image">
+        <img :class="$style.image" :src="preview" alt="card preview image">
 
         <div>
             <h3 :class="$style.title">
-                XR-74 «Cooper»
+                {{ name }}
             </h3>
 
             <p :class="$style.desc">
-                Brief description of the project,
-                in a few lines.
+                {{ description }}
             </p>
 
             <div :class="$style.price">
-                1 278 $/h
+                {{ rent }} $/h
             </div>
         </div>
     </nuxt-link>
 </template>
 
 <script>
-  export default {
-    name: 'CardPreview',
-    props: {
-      link: {
-        type: String,
-        default: '/detail',
-      },
-    },
-  }
+    export default {
+        name: 'CardPreview',
+        props: {
+            link: {
+                type: String,
+                required: true,
+            },
+            name: {
+                type: String,
+                required: true,
+            },
+            description: {
+                type: String,
+                required: true,
+            },
+            preview: {
+                type: String,
+                required: true,
+            },
+            rent: {
+                type: Number,
+                required: true,
+            },
+        },
+    };
 </script>
 
 <style module lang="scss">

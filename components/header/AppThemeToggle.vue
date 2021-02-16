@@ -6,9 +6,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'AppThemeToggle',
-  }
+    export default {
+        name: 'AppThemeToggle',
+    };
 </script>
 
 <style module lang="scss">

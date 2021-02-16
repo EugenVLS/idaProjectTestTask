@@ -1,9 +1,11 @@
 <template>
     <div :class="$style.catalog">
         <div :class="$style.controls">
-            <select>
-                <option>Rent Whatever1</option>
-                <option>Rent Whatever2</option>
+            <select v-model="filterType">
+                <option v-for="( type, index ) in types" :key="index"
+                        :value="type">
+                    {{ type }}
+                </option>
             </select>
 
             <button type="button" class="button button--icon">
@@ -18,28 +20,36 @@
         </div>
 
         <div :class="$style['catalog-list']">
-            <div v-for="item in catalogItems" :key="item.id"
+            <div v-for="item in items" :key="item.id"
                  :class="$style['catalog-item']">
-                <card-preview v-bind="item"/>
+                <card-preview :link="`/detail/${item.id}/spec`"
+                              v-bind="item"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-  import CardPreview    from '~/components/card/CardPreview';
-  import { mapGetters } from 'vuex';
+    import CardPreview    from '~/components/card/CardPreview';
+    import { mapGetters } from 'vuex';
 
-  export default {
-    name: 'AppCatalog',
-    components: { CardPreview },
-    computed: {
-      ...mapGetters(['catalogItems']),
-    },
-    mounted () {
-      console.log(this.catalogItems);
-    }
-  }
+    export default {
+        name: 'AppCatalog',
+        components: { CardPreview },
+        data: () => ( {
+            filterType: '',
+        } ),
+        computed: {
+            ...mapGetters( [ 'catalogItems' ] ),
+            types: vm => {
+                const types = vm.catalogItems.map( item => item.type );
+                const filteredTypes = [ ...new Set( types ) ];
+                vm.filterType = filteredTypes[0];
+                return filteredTypes;
+            },
+            items: vm => vm.catalogItems.filter( item => item.type === vm.filterType ),
+        },
+    };
 </script>
 
 <style module lang="scss">
@@ -65,7 +75,6 @@
     }
 
     .catalog-item {
-        flex-grow: 1;
         padding: 16px;
         width: 33.3333%;
 

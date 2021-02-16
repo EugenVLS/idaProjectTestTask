@@ -1,23 +1,23 @@
 <template>
     <div :class="$style.detail">
-        <img :class="$style.image" src="~/assets/img/card-image.png" alt="card detail image">
+        <img :class="$style.image" :src="image" alt="card detail image">
 
         <div :class="$style.desc">
             <h1 :class="$style.title">
-                XR-74 «Cooper»
+                {{ name }}
             </h1>
 
             <div :class="$style.tabs">
                 <div :class="$style['tab-links']">
-                    <nuxt-link to="/detail/spec" :class="$style.tab">
+                    <nuxt-link :to="`/detail/${id}/spec`" :class="$style.tab">
                         Specifications
                     </nuxt-link>
 
-                    <nuxt-link to="/detail/team" :class="$style.tab">
+                    <nuxt-link :to="`/detail/${id}/team`" :class="$style.tab">
                         Team
                     </nuxt-link>
 
-                    <nuxt-link to="/detail/terms" :class="$style.tab">
+                    <nuxt-link :to="`/detail/${id}/terms`" :class="$style.tab">
                         Rent terms
                     </nuxt-link>
                 </div>
@@ -29,7 +29,7 @@
                 <div :class="$style.banner">
                     <div :class="$style['banner-price']">
                         Rent for
-                        <span>164 $/h</span>
+                        <span>{{ rent }} $/h</span>
                     </div>
 
                     <button type="button" class="button">
@@ -42,9 +42,39 @@
 </template>
 
 <script>
-  export default {
-    name: 'CardDetail',
-  }
+    export default {
+        name: 'CardDetail',
+        props: {
+            id: {
+                type: String,
+                required: true,
+            },
+            name: {
+                type: String,
+                reqired: true,
+            },
+            image: {
+                type: String,
+                reqired: true,
+            },
+            rent: {
+                type: Number,
+                reqired: true,
+            },
+            specifications_text: {
+                type: String,
+                reqired: true,
+            },
+            team_text: {
+                type: String,
+                reqired: true,
+            },
+            term_text: {
+                type: String,
+                reqired: true,
+            },
+        }
+    };
 </script>
 
 <style module lang="scss">
@@ -59,10 +89,12 @@
 
     .image {
         width: 54%;
+        border-radius: 24px;
 
         @media (max-width: $mobile) {
             width: 100%;
             margin-bottom: 22px;
+            border-radius: 16px;
         }
     }
 

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'AppUser',
-  }
+    export default {
+        name: 'AppUser',
+    };
 </script>
 
 <style module lang="scss">

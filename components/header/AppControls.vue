@@ -13,11 +13,12 @@
 </template>
 
 <script>
-  import AppThemeToggle from '~/components/header/AppThemeToggle'
-  export default {
-    name: 'AppUser',
-    components: { AppThemeToggle },
-  }
+    import AppThemeToggle from '~/components/header/AppThemeToggle';
+
+    export default {
+        name: 'AppUser',
+        components: { AppThemeToggle },
+    };
 </script>
 
 <style module lang="scss">
