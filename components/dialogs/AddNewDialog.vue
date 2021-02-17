@@ -8,7 +8,7 @@
                 <button type="button" class="button button--icon"
                         @click="display = false">
                     <div :class="$style.close + ' button__icon'">
-                        <svg-icon name="close" width="24" height="24"/>
+                        <svg-icon :class="$style['close-icon']" name="close" width="24" height="24"/>
                     </div>
                 </button>
 
@@ -39,7 +39,7 @@
           this.$emit( 'input', value );
         },
       },
-    }
+    },
   }
 </script>
 
@@ -53,6 +53,7 @@
         width: 600px;
         padding: 64px 72px;
         background-color: $white;
+        @include bg-color(bg-primary);
         border-radius: 48px 0 0 48px;
 
         @media (max-width: $mobile) {
@@ -70,7 +71,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background: rgba(52, 79, 106, 0.32);
+        @include bg-color(overlay);
         backdrop-filter: blur(32px);
     }
 
@@ -82,6 +83,10 @@
         position: absolute;
         top: 0;
         right: 0;
-        background-color: $grey-lighten-2;
+        @include bg-color(bg-secondary);
+    }
+
+    .close-icon {
+        @include color(title);
     }
 </style>

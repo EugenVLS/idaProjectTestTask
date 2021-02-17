@@ -3,18 +3,23 @@
 </template>
 
 <script>
-    import Catalog     from '~/components/catalog/Catalog';
-    import { mapActions } from 'vuex';
+    import Catalog        from '~/components/catalog/Catalog'
+    import { mapActions } from 'vuex'
 
     export default {
         components: {
             Catalog,
         },
-        async asyncData( { store } ) {
-            await store.dispatch( 'getItems' );
+        async asyncData ({ store, error }) {
+            try {
+                await store.dispatch('getItems')
+            } catch ( e ) {
+                console.log( e );
+                error( e );
+            }
         },
         methods: {
-            ...mapActions( [ 'getItems' ] ),
+            ...mapActions(['getItems']),
         },
-    };
+    }
 </script>

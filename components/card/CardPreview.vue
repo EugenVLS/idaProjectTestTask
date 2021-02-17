@@ -50,12 +50,12 @@
     .card {
         display: flex;
         padding: 22px 30px;
-        background-color: $white;
         border-radius: 32px;
         text-decoration: none;
         border: 2px solid transparent;
         transition: border-color $animation_time ease;
         outline: none;
+        @include bg-color(bg-primary);
 
         &:hover,
         &:focus {
@@ -84,12 +84,12 @@
         line-height: 1;
         margin-top: 16px;
         margin-bottom: 12px;
-        @include color(black);
+        @include color(title);
     }
 
     .desc {
         font-size: 12px;
-        color: $grey;
+        @include color(text-primary);
         margin-bottom: 16px;
     }
 

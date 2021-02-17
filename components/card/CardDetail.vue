@@ -126,7 +126,7 @@
     .title {
         font-size: 40px;
         font-weight: bold;
-        color: $black;
+        @include color(title);
         margin-bottom: 32px;
 
         @media (max-width: $mobile) {
@@ -155,7 +155,7 @@
         font-size: 16px;
         font-weight: bold;
         line-height: 14px;
-        color: $grey;
+        @include color(text-primary);
         text-decoration: none;
         margin-right: 32px;
         transition: color $animation_time ease;
@@ -165,6 +165,10 @@
         }
     }
 
+    :global(.nuxt-link-active).tab {
+        color: $blue;
+    }
+
     .banner-overlay {
         @media (max-width: $mobile) {
             position: fixed;
@@ -172,7 +176,7 @@
             left: 0;
             width: 100%;
             padding: 0 16px 32px 16px;
-            background: $white;
+            @include bg-color(bg-primary);
 
             &::before {
                 content: "";
@@ -181,7 +185,7 @@
                 bottom: 100%;
                 width: 100%;
                 height: 32px;
-                background: linear-gradient(180deg, rgba(252, 252, 252, 0) 0%, $white 100%);
+                @include bg-color(shadow);
             }
         }
     }
@@ -192,7 +196,7 @@
         justify-content: space-between;
         padding: 16px 32px;
         border-radius: 16px;
-        background-color: $grey-lighten-2;
+        @include bg-color(bg-secondary);
 
         @media (max-width: $mobile) {
             margin-top: -8px;
@@ -203,7 +207,7 @@
     .banner-price {
         font-size: 20px;
         font-weight: bold;
-        color: $black;
+        @include color(title);
 
         span {
             color: $pink;

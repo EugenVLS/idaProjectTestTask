@@ -33,40 +33,46 @@
 </template>
 
 <script>
-    import CardPreview    from '~/components/card/CardPreview';
-    import { mapGetters } from 'vuex';
-    import AddNewDialog   from '~/components/dialogs/AddNewDialog'
+    import CardPreview from '~/components/card/CardPreview'
+    import { mapGetters } from 'vuex'
+    import AddNewDialog from '~/components/dialogs/AddNewDialog'
 
     export default {
         name: 'Catalog',
-        components: { AddNewDialog, CardPreview },
-        data: () => ( {
+        components: {
+            AddNewDialog,
+            CardPreview,
+        },
+        data: () => ({
             filterType: '',
             addDialog: false,
-        } ),
+        }),
         computed: {
-            ...mapGetters( [ 'catalogItems' ] ),
+            ...mapGetters(['catalogItems']),
             types: vm => {
-                const types = vm.catalogItems.map( item => item.type );
-                const filteredTypes = [ ...new Set( types ) ];
-                vm.filterType = filteredTypes[0];
-                return filteredTypes;
+                const types = vm.catalogItems.map(item => item.type)
+                const filteredTypes = types.filter((item, index) => {
+                    return types.indexOf(item) === index;
+                })
+                vm.filterType = filteredTypes[0]
+                return filteredTypes
             },
-            items: vm => vm.catalogItems.filter( item => item.type === vm.filterType ),
+            items: vm => vm.catalogItems.filter(item => item.type === vm.filterType),
         },
         methods: {
-          openDialog() {
-            this.addDialog = true;
-          },
+            openDialog () {
+                this.addDialog = true
+            },
         },
-    };
+    }
 </script>
 
 <style module lang="scss">
     .catalog {
+        flex-grow: 1;
         padding: 56px 64px;
-        background-color: $grey-lighten-2;
         border-radius: 48px;
+        @include bg-color(bg-secondary);
 
         @media (max-width: $mobile) {
             padding: 24px 16px;

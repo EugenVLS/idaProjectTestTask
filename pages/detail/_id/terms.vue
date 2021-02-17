@@ -45,7 +45,7 @@
 <style module lang="scss">
     .text {
         font-size: 14px;
-        color: $grey;
+        @include color(text-primary);
     }
 
     .info {
@@ -59,7 +59,7 @@
 
     .title {
         font-size: 16px;
-        color: $black;
+        @include color(title);
         margin-bottom: 24px;
 
         @media (max-width: $mobile) {
@@ -86,7 +86,7 @@
 
         span {
             font-size: 14px;
-            color: $grey;
+            @include color(text-primary);
         }
     }
 </style>

@@ -57,7 +57,7 @@
 <style module lang="scss">
     .text {
         font-size: 14px;
-        color: $grey;
+        @include color(text-primary);
     }
 
     .info {
@@ -71,7 +71,7 @@
 
     .title {
         font-size: 24px;
-        color: $black;
+        @include color(title);
         margin-bottom: 32px;
 
         @media (max-width: $mobile) {
@@ -100,7 +100,7 @@
         margin-right: 24px ;
         min-width: 80px;
         height: 96px;
-        background-color: $grey-lighten-2;
+        @include bg-color(bg-secondary);
         border-radius: 16px;
 
         svg {
@@ -120,7 +120,7 @@
 
     .desc-title {
         font-weight: bold;
-        color: $black;
+        @include color(title);
         margin-top: 12px;
         margin-bottom: 8px;
 
@@ -131,6 +131,6 @@
 
     .desc-text {
         font-size: 14px;
-        color: $grey;
+        @include color(text-primary);
     }
 </style>

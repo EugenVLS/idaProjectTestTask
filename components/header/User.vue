@@ -26,7 +26,7 @@
     }
 
     .text {
-        color: $black;
+        @include color(title);
         font-weight: bold;
 
         @media (max-width: $mobile) {

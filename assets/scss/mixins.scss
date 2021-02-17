@@ -1,10 +1,19 @@
 @mixin color($color) {
     color: map-get(map-get($colors, light), $color);
+    fill: map-get(map-get($colors, light), $color);
 
-    :global(.theme--dark) & {
+    :global(.dark-mode) & {
         color: map-get(map-get($colors, dark), $color);
+        fill: map-get(map-get($colors, dark), $color);
     }
 }
 
+@mixin bg-color($color) {
+    background: map-get(map-get($colors, light), $color);
+
+    :global(.dark-mode) & {
+        background: map-get(map-get($colors, dark), $color);
+    }
+}
 
 

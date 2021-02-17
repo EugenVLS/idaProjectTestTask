@@ -10,6 +10,7 @@ html {
 *::after {
     box-sizing: border-box;
     margin: 0;
+    transition: color $animation_time ease, background-color $animation_time ease;
 }
 
 img,
@@ -26,4 +27,12 @@ input[type="file"] {
     opacity: 0;
     position: absolute;
     z-index: -1;
+}
+
+.light-mode {
+    background-color: $white;
+}
+
+.dark-mode {
+    background-color: $dark-blue;
 }

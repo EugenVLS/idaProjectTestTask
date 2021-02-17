@@ -1,5 +1,6 @@
 /* colors */
-$black: #012345;
+$black: #011C37;
+$dark-blue: #012345;
 $white: #FCFCFC;
 $grey: #677B8F;
 $grey-lighten-1: #99A7B5;
@@ -9,22 +10,22 @@ $blue: #4959FF;
 
 $colors: (
     light: (
-        black: #012345,
-        white: #FCFCFC,
-        grey: #677B8F,
-        grey-lighten-1: #99A7B5,
-        grey-lighten-2: #F3F4F7,
-        pink: #F84AB3,
-        blue: #4959FF,
+        bg-primary: $white,
+        bg-secondary: $grey-lighten-2,
+        title: $dark-blue,
+        text-primary: $grey,
+        text-secondary: $grey-lighten-1,
+        shadow: linear-gradient(180deg, rgba(252, 252, 252, 0) 0%, $white 100%),
+        overlay: rgba(52, 79, 106, 0.32),
     ),
     dark: (
-        black: #012345,
-        white: #FCFCFC,
-        grey: #677B8F,
-        grey-lighten-1: #99A7B5,
-        grey-lighten-2: #F3F4F7,
-        pink: #F84AB3,
-        blue: #4959FF,
+        bg-primary: $dark-blue,
+        bg-secondary: $black,
+        title: $white,
+        text-primary: $grey-lighten-1,
+        text-secondary: $grey,
+        shadow: linear-gradient(180deg, rgba(1, 35, 69, 0) 0%, $dark-blue 100%),
+        overlay: rgba(0, 7, 14, 0.32),
     )
 );
 

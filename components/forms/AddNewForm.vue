@@ -64,7 +64,7 @@
     .title {
         font-size: 40px;
         font-weight: bold;
-        color: $black;
+        @include color(title);
         margin-bottom: 40px;
 
         @media (max-width: $mobile) {
@@ -79,7 +79,7 @@
         height: 348px;
         margin-bottom: 24px;
         border-radius: 24px;
-        background-color: $grey-lighten-2;
+        @include bg-color(bg-secondary);
         cursor: pointer;
         border: 2px solid transparent;
         transition: border-color $animation_time ease;
@@ -105,7 +105,7 @@
         height: 48px;
         margin: auto;
         border-radius: 16px;
-        background-color: $white;
+        @include bg-color(bg-primary);
 
         @media (max-width: $mobile) {
             width: 32px;
@@ -125,10 +125,10 @@
         padding: 19px 22px;
         font-size: 16px;
         font-weight: 300;
-        color: $grey;
+        @include color(text-primary);
         margin-bottom: 24px;
         border-radius: 12px;
-        background-color: $grey-lighten-2;
+        @include bg-color(bg-secondary);
         border: 2px solid transparent;
         transition: border-color $animation_time ease;
         outline: none;
@@ -155,7 +155,7 @@
             position: absolute;
             top: 21px;
             right: 24px;
-            color: $grey-lighten-1;
+            @include color(text-secondary);
             line-height: 1;
             content: "$/h";
         }

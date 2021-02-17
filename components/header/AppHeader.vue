@@ -2,7 +2,8 @@
     <header :class="$style.header">
         <div :class="$style['header-container']">
             <nuxt-link to="/" :class="$style.logo">
-                <svg-icon name="logo" width="170" height="48"/>
+                <svg-icon v-if="$colorMode.preference === 'dark'" name="logo-dark" width="170" height="48"/>
+                <svg-icon v-else name="logo" width="170" height="48"/>
             </nuxt-link>
 
             <div :class="$style.label">World's first affordable airsharing</div>
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     import User     from '~/components/header/User';
     import Controls from '~/components/header/Controls';
 
@@ -24,6 +26,9 @@
             User,
             Controls,
         },
+        computed: {
+            ...mapGetters(['appTheme']),
+        }
     };
 </script>
 
@@ -46,7 +51,7 @@
     }
 
     .label {
-        color: $grey;
+        @include color(text-primary);
         width: 41%;
 
         @media (max-width: $mobile) {
